@@ -1,4 +1,5 @@
 import { Form, Button, Card } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -13,6 +14,7 @@ export default function SubmitForm() {
   const [postcode, setPostcode] = useState('');
 
   const api_url = 'http://localhost:8000/users';
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,6 +35,7 @@ export default function SubmitForm() {
         // console.log(response.data);
         console.log(currentCustomer);
         localStorage.setItem('current customer', currentCustomer);
+        history.push('/detail');
       })
       .catch((error) => {
         console.log('Something went wrong!', error);
