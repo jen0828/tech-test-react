@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SubmitForm from './SubmitForm/SubmitForm';
-import EligibleCards from './EligibleCards';
+import EligibleCards from './EligibleCards/EligibleCards';
 
 function App() {
   return (
