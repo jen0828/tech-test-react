@@ -1,4 +1,15 @@
 {
- "users": [  ] 
+  "users": [
+    {
+      "title": "Mr",
+      "firstName": "Ollie",
+      "lastName": "Murphree",
+      "dob": "",
+      "income": "3400",
+      "employment": "Full-time",
+      "houseNumber": "700",
+      "postcode": "BS14 3NN",
+      "id": 1
+    }
+  ]
 }
-  
