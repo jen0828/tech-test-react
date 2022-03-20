@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import CardList from '../CardList/CardList';
 import TotalCredit from '../TotalCredit/TotalCredit';
 import axios from 'axios';
@@ -6,6 +7,7 @@ import axios from 'axios';
 export default function EligibleCards() {
   const [eligibleCards, setEligibleCards] = useState([]);
   const api_url = `http://localhost:8000/cards`;
+  const history = useHistory();
   const retrievedObject = localStorage.getItem('current customer');
   const currentCustomer = JSON.parse(retrievedObject);
 
@@ -57,7 +59,15 @@ export default function EligibleCards() {
         </div>
       </div>
       <TotalCredit eligibleCards={eligibleCards} />
-
+      <div className="container">
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            history.goBack();
+          }}>
+          Go back
+        </button>
+      </div>
     </div>
   );
 }
