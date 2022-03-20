@@ -19,7 +19,7 @@ export default function TotalCredit(props) {
   return (
     <div className="d-flex justify-content-center mt-5">
       <div className="col-md-2">
-        <h3>Please select cards:</h3>
+        <p><strong>Please select cards:</strong></p>
       </div>
       <div data-testid="card" className="col-md-2">
         {props.eligibleCards.map((item, index) => {
