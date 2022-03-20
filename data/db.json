@@ -14,28 +14,28 @@
   ],
   "cards": [
     {
-      "Id": 1,
-      "Name": "Student Life",
-      "Apr": "18.9%",
-      "Balance Transfer Offer Duration": "0 months",
-      "Purchase Offer Duration": "6 Months",
-      "Credit Available": 1200
+      "id": 1,
+      "name": "Student Life",
+      "apr": "18.9%",
+      "balance_transfer_offer_duration": "0 months",
+      "purchase_offer_duration": "6 Months",
+      "credit_available": 1200
     },
     {
-      "Id": 2,
-      "Name": "Anywhere Card",
-      "Apr": "33.9%",
-      "Balance Transfer Offer Duration": "0 months",
-      "Purchase Offer Duration": "0 Months",
-      "Credit Available": 300
+      "id": 2,
+      "name": "Anywhere Card",
+      "apr": "33.9%",
+      "balance_transfer_offer_duration": "0 months",
+      "purchase_offer_duration": "0 Months",
+      "credit_available": 300
     },
     {
-      "Id": 3,
-      "Name": "Liquid Card",
-      "Apr": "33.9%",
-      "Balance Transfer Offer Duration": "12 months",
-      "Purchase Offer Duration": "6 Months",
-      "Credit Available": 3000
+      "id": 3,
+      "name": "Liquid Card",
+      "apr": "33.9%",
+      "balance_transfer_offer_duration": "12 months",
+      "purchase_offer_duration": "6 Months",
+      "credit_available": 3000
     }
   ]
 }
