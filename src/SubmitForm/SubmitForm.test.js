@@ -21,4 +21,14 @@ describe('SubmitForm', () => {
     expect(houseNumberField).toBeInTheDocument();
     expect(postcodeField).toBeInTheDocument();
   });
+
+  it('should have a submit button', () => {
+    render(<SubmitForm />);
+    const submitBtn = screen.getByText('Check Eligibility');
+    const buttonElement = screen.getByRole('button', {
+      name: /check eligibility/i,
+    });
+    expect(submitBtn).toBeInTheDocument();
+    expect(buttonElement).toBeInTheDocument();
+  });
 });
