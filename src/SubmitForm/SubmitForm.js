@@ -26,7 +26,7 @@ export default function SubmitForm() {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>DOB</Form.Label>
-                <Form.Control type="dob" required placeholder="1970-07-01" />
+                <Form.Control type="dob" required placeholder="01/07/1970" />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -34,7 +34,7 @@ export default function SubmitForm() {
                 <Form.Control
                   type="employment"
                   required
-                  placeholder="full-time"
+                  placeholder="Full-time"
                 />
               </Form.Group>
 
