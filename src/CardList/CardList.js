@@ -6,7 +6,7 @@ export default function CardList(props) {
   // console.log(props)
 
   return (
-    <div className="col-md-4">
+    <div className="col-md-4" align="center">
       <br/>
       <Card border="info" style={{ width: '18rem' }}>
         <Card.Header>
