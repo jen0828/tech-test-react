@@ -11,5 +11,31 @@
       "postcode": "BS14 2NN",
       "id": 1
     }
+  ],
+  "cards" : [
+    {
+      "Id": 1,
+      "Name": "Student Life",
+      "Apr": "18.9%",
+      "Balance Transfer Offer Duration": "0 months",
+      "Purchase Offer Duration": "6 Months",
+      "Credit Available": 1200
+    },
+    {
+      "Id": 2,
+      "Name": "Anywhere Card",
+      "Apr": "33.9%",
+      "Balance Transfer Offer Duration": "0 months",
+      "Purchase Offer Duration": "0 Months",
+      "Credit Available": 300 
+    },
+    {
+      "Id": 3,
+      "Name": "Liquid Card",
+      "Apr": "33.9%",
+      "Balance Transfer Offer Duration": "12 months",
+      "Purchase Offer Duration": "6 Months",
+      "Credit Available": 3000  
+    }
   ]
 }
