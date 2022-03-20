@@ -32,6 +32,7 @@ export default function SubmitForm() {
         const currentCustomer = JSON.stringify(response.data);
         // console.log(response.data);
         console.log(currentCustomer);
+        localStorage.setItem('current customer', currentCustomer);
       })
       .catch((error) => {
         console.log('Something went wrong!', error);
