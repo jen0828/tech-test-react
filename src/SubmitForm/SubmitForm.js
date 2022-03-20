@@ -3,7 +3,6 @@ import { Form, Button, Card } from 'react-bootstrap';
 export default function SubmitForm() {
   return (
     <>
-      <div>Submit Form</div>
       <div className="d-flex justify-content-center mt-5">
         <Card
           style={{ width: '30rem' }}
