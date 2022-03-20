@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import CardList from '../CardList/CardList';
 import axios from 'axios';
 
 export default function EligibleCards() {
@@ -6,7 +7,6 @@ export default function EligibleCards() {
   const api_url = `http://localhost:8000/cards`;
   const retrievedObject = localStorage.getItem('current customer');
   const currentCustomer = JSON.parse(retrievedObject);
-
 
   useEffect(() => {
     getEligibleCards();
@@ -48,6 +48,13 @@ export default function EligibleCards() {
         {currentCustomer.lastName}
       </h1>
       <h3>Please see eligible cards below</h3>
+      <div className="container">
+        <div className="row">
+          {eligibleCards.map((a, i) => {
+            return <CardList eligibleCards={eligibleCards[i]} i={i} key={i} />;
+          })}
+        </div>
+      </div>
     </div>
   );
 }
