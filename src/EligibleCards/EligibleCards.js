@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CardList from '../CardList/CardList';
+import TotalCredit from '../TotalCredit/TotalCredit';
 import axios from 'axios';
 
 export default function EligibleCards() {
@@ -55,6 +56,8 @@ export default function EligibleCards() {
           })}
         </div>
       </div>
+      <TotalCredit eligibleCards={eligibleCards} />
+
     </div>
   );
 }
