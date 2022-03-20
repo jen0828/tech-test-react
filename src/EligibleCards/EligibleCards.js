@@ -20,7 +20,6 @@ export default function EligibleCards() {
     try {
       const res = await axios.get(api_url);
       const allCards = res.data;
-      //console.log(res);
 
       const Cards = [];
       const Student = allCards[0];
@@ -37,7 +36,6 @@ export default function EligibleCards() {
         Cards.push(Liquid);
       }
       setEligibleCards(Cards);
-      //console.log(Cards);
       return Cards;
     } catch (error) {
       console.log('Something went wrong!', error);

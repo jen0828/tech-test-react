@@ -32,8 +32,6 @@ export default function SubmitForm() {
       })
       .then((response) => {
         const currentCustomer = JSON.stringify(response.data);
-        // console.log(response.data);
-        console.log(currentCustomer);
         localStorage.setItem('current customer', currentCustomer);
         history.push('/detail');
       })

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 export default function TotalCredit(props) {
-  // console.log('TotalCredit- props');
   console.log(props);
   const [totalAmount, setTotalAmount] = useState(0);
 
