@@ -64,6 +64,7 @@ export default function EligibleCards() {
           className="btn btn-primary"
           onClick={() => {
             history.goBack();
+            localStorage.clear();
           }}>
           Go back
         </button>
