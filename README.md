@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Cards application 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React tech test given one day to complete: develop a web application to allow customers to review credit cards that are applicable to their credit status.
+ 
+## Requirements
+ 
+- The user should submit their details via a form.
+- The application should then return a filtered list of cards available to that user; use the rules outlined at the end of this document to decide whether a particular card is available.
+- The user should be allowed to select one or more of the returned cards and see the details for the cards selected.
+- When multiple cards are selected, the total amount of credit available to the user on those cards should be displayed.
 
-## Available Scripts
+ 
+## Assumptions
+- I assumed users were already logged in, and thus user authentication was already dealt with on the server
+- JSON server was used to mock a backend API so that I can simulate API calls 
+   - see the endpoints : `http://localhost:8000/cards`  `http://localhost:8000/users`
+ 
+## Solution / My Approach
+ 
+ Steps I thought of and executed for solving the task meeting the requirements above:
+ 
+1. The user submits details via the provided form
+2. The details saved in the JSON server database( `http://localhost:8000/users` )using Axios Post request
+3. The details of the current user is saved in `localStorage` using `localStorage.setItem()`
+4. `EligibleCards()` functional component grabs the current user's details from the `localStorage` and gets cards data from the API endpoint (`http://localhost:8000/cards`), which enables the app to determine/show eligible cards for the current user.
+5. Once all eligible cards are displayed, the user can select multiples cards using the `checkbox`, and the total amount of credit will be shown for the chosen cards.
+6. When the user clicks the `go back` button, the current user's details will be removed from `localStorage` using `localStorage.clear()`, which will also be redirected to the previous page.
 
-In the project directory, you can run:
+Other notes:
 
-### `npm start`
+* React router was used to simulate a multi-page website, and Axios was used for API calls.
+* Given the limited time, I focused on building features to the spec/ the functionality of the app first and styling/UI last. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Libraries/ Tools used
+ 
+* React library with Node v16.13.1
+* Jest for testing
+* React-Bootstrap
+* JSON-server
+* Axios
+ 
+## Installation and Setup Instructions
+ 
+Clone down this repository. You will need `node` and `npm` installed globally on your machine. 
+ 
+Installation:
+ 
+`npm install` 
+ 
+To Start JSON Server ( API endpoints):
+ 
+`npx json-server --watch data/db.json --port 8000`
+ 
+To Start App:
+ 
+`npm start` 
+ 
+To Visit App:
+ 
+`localhost:3000`
+ 
+To Run Tests:
+ 
+`npm test`
+ 
+## Improvements
+ 
+I had only one day to build this app, so time permitting, I would address the following next:
+ 
+* Error handling for API calls: No error handling is undertaken in this app, which should be addressed from the user's perspective
+ 
+* Form Validation: I did make all fields 'required', but I would enhance further perhaps using HTML5 form validation to provide actionable feedback to users 
+ 
+* Improve Accessibility using WAI-ARIA attributes
+ 
+* More testing: mock API calls, E2E testing for the three test cases using cypress
+ 
+* Improve UI design
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Add login functionality: JWT Authentication using JSON-server and jsonwebtoken
+ 
+* Create online API endpoints instead of the local API endpoints so that I can deploy the app
