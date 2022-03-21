@@ -80,8 +80,11 @@ export default function SubmitForm() {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>DOB</Form.Label>
-                <Form.Control type="dob" required placeholder="01/07/1970"
-                onChange={(e) => setDob(e.target.value)}
+                <Form.Control
+                  type="dob"
+                  required
+                  placeholder="01/07/1970"
+                  onChange={(e) => setDob(e.target.value)}
                 />
               </Form.Group>
 
