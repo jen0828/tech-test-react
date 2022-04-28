@@ -20,7 +20,7 @@ export default function EligibleCards() {
     try {
       const res = await axios.get(api_url);
       const allCards = res.data;
-
+      console.log(allCards);
       const Cards = [];
       const Student = allCards[0];
       const Anywhere = allCards[1];
@@ -36,7 +36,6 @@ export default function EligibleCards() {
         Cards.push(Liquid);
       }
       setEligibleCards(Cards);
-      return Cards;
     } catch (error) {
       console.log('Something went wrong!', error);
     }
@@ -51,8 +50,8 @@ export default function EligibleCards() {
       <h3>Please see eligible cards below</h3>
       <div className="container">
         <div className="row">
-          {eligibleCards.map((a, i) => {
-            return <CardList eligibleCards={eligibleCards[i]} i={i} key={i} />;
+          {eligibleCards.map((card, index) => {
+            return <CardList eligibleCards={card} key={index} />;
           })}
         </div>
       </div>
